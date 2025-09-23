@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://h7k85xmnfoac"]
+
+[ext_resource type="Texture2D" path="res://icon.svg" id="1_ebbnx"]
+[ext_resource type="Texture2D" uid="uid://cecqdwd86vlhn" path="res://baby cat.png" id="2_mnu2n"]
+[ext_resource type="PackedScene" uid="uid://db4o4av7051r3" path="res://bush.tscn" id="3_8asdn"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="robot" type="Sprite2D" parent="."]
+position = Vector2(384, 310)
+texture = ExtResource("1_ebbnx")
+
+[node name="BabyCat" type="Sprite2D" parent="."]
+position = Vector2(593, 248)
+texture = ExtResource("2_mnu2n")
+
+[node name="tree3" parent="BabyCat" instance=ExtResource("3_8asdn")]
+offset_left = 1447.4401
+offset_top = 639.48004
+offset_right = 1608.4401
+offset_bottom = 776.48004
+
+[node name="tree" parent="." instance=ExtResource("3_8asdn")]
+offset_left = 752.0
+offset_top = 333.0
+offset_right = 913.0
+offset_bottom = 470.0
+
+[node name="tree2" parent="." instance=ExtResource("3_8asdn")]
+offset_left = 113.0
+offset_top = 98.0
+offset_right = 274.00003
+offset_bottom = 235.0
