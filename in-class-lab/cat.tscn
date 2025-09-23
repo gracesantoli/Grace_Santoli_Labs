@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://um3emwfyliwv"]
+
+[ext_resource type="Texture2D" uid="uid://cecqdwd86vlhn" path="res://baby cat.png" id="1_hcucf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hcucf"]
+font_size = 183
+
+[node name="Level" type="Node2D"]
+
+[node name="Cat" type="Sprite2D" parent="."]
+texture = ExtResource("1_hcucf")
+
+[node name="Label" type="Label" parent="Cat"]
+offset_left = 101.0
+offset_top = -219.0
+offset_right = 629.0
+offset_bottom = 31.0
+text = "Me0w"
+label_settings = SubResource("LabelSettings_hcucf")
