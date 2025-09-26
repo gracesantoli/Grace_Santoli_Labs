@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bo0krt4n1a0xo"]
+
+[ext_resource type="Texture2D" path="res://doge.png" id="1_0e48y"]
+[ext_resource type="Texture2D" uid="uid://hsovk0av52en" path="res://Lab 1 Homework/Spiderman.png" id="2_epypp"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Doge" type="Sprite2D" parent="."]
+position = Vector2(218.99998, 183.99998)
+scale = Vector2(0.29281768, 0.29281768)
+texture = ExtResource("1_0e48y")
+
+[node name="Spiderman" type="Sprite2D" parent="."]
+position = Vector2(786, 445)
+texture = ExtResource("2_epypp")
