@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://uxgdavle3cu0"]
+[gd_scene load_steps=4 format=3 uid="uid://uxgdavle3cu0"]
 
 [ext_resource type="Texture2D" uid="uid://b4ivvn560vchm" path="res://Mossy Tileset/Mossy - FloatingPlatforms.png" id="1_epypp"]
 [ext_resource type="PackedScene" uid="uid://b1xpmgt7vrlru" path="res://player.tscn" id="2_0e48y"]
+[ext_resource type="PackedScene" uid="uid://cn0ushjddapoe" path="res://collectable.tscn" id="3_cove1"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -29,4 +30,7 @@ region_enabled = true
 region_rect = Rect2(428.20508, 1043.9355, 1619.7949, 498.14014)
 
 [node name="player" parent="." instance=ExtResource("2_0e48y")]
-position = Vector2(550, 239)
+position = Vector2(573, 318)
+
+[node name="Area2D" parent="." instance=ExtResource("3_cove1")]
+position = Vector2(751, 95)
