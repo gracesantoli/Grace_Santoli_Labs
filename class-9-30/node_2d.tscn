@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://uxgdavle3cu0"]
+
+[ext_resource type="Texture2D" uid="uid://b4ivvn560vchm" path="res://Mossy Tileset/Mossy - FloatingPlatforms.png" id="1_epypp"]
+[ext_resource type="PackedScene" uid="uid://b1xpmgt7vrlru" path="res://player.tscn" id="2_0e48y"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="background" type="Node2D" parent="."]
+
+[node name="MossyFloatingPlatforms" type="Sprite2D" parent="background"]
+position = Vector2(359, 397)
+scale = Vector2(0.2831324, 0.2831324)
+texture = ExtResource("1_epypp")
+region_enabled = true
+region_rect = Rect2(428.20508, 1043.9355, 1619.7949, 498.14014)
+
+[node name="MossyFloatingPlatforms2" type="Sprite2D" parent="background"]
+position = Vector2(684, 285.00003)
+scale = Vector2(0.21686746, 0.21686743)
+texture = ExtResource("1_epypp")
+region_enabled = true
+region_rect = Rect2(428.20508, 1043.9355, 1619.7949, 498.14014)
+
+[node name="MossyFloatingPlatforms3" type="Sprite2D" parent="background"]
+position = Vector2(944.00006, 377)
+scale = Vector2(0.23895578, 0.23895577)
+texture = ExtResource("1_epypp")
+region_enabled = true
+region_rect = Rect2(428.20508, 1043.9355, 1619.7949, 498.14014)
+
+[node name="player" parent="." instance=ExtResource("2_0e48y")]
+position = Vector2(550, 239)

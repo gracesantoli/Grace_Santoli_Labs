@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://cei0yklevwaot"]
+
+[ext_resource type="PackedScene" uid="uid://uxgdavle3cu0" path="res://node_2d.tscn" id="1_jg0dc"]
+
+[node name="Level 2" instance=ExtResource("1_jg0dc")]
+
+[node name="background" parent="." index="0"]
+modulate = Color(1, 0.15686275, 1, 1)
+
+[node name="MossyFloatingPlatforms" parent="background" index="0"]
+position = Vector2(241, 561)
+
+[node name="MossyFloatingPlatforms2" parent="background" index="1"]
+position = Vector2(1005, 267.00003)
+
+[node name="MossyFloatingPlatforms3" parent="background" index="2"]
+position = Vector2(664.9999, 425)
