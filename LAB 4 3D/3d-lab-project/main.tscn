@@ -1,0 +1,77 @@
+[gd_scene load_steps=15 format=3 uid="uid://mdap844d78xv"]
+
+[ext_resource type="Texture2D" path="res://alien-panels-ue/alien-panels_albedo.png" id="1_7mycd"]
+[ext_resource type="Texture2D" uid="uid://bvrtyy4maf2h2" path="res://materials/alien-panels-ue/alien-panels_albedo.png" id="2_272bh"]
+[ext_resource type="Texture2D" uid="uid://b1wii0yqcpx1p" path="res://materials/alien-panels-ue/alien-panels_metallic.png" id="3_5vw27"]
+[ext_resource type="Texture2D" uid="uid://cxyqld5duvoyc" path="res://materials/alien-panels-ue/alien-panels_normal-dx.png" id="4_kek77"]
+[ext_resource type="Texture2D" uid="uid://0jsjujljmq5d" path="res://materials/alien-panels-ue/alien-panels_roughness.png" id="5_4c57u"]
+[ext_resource type="Script" uid="uid://bpsur8vchjcie" path="res://character_body_3d.gd" id="6_efxa6"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
+sky_top_color = Color(0.4390723, 0.513727, 0.9197016, 1)
+sky_horizon_color = Color(0.9027282, 1.0260638, 1.0860856, 1)
+ground_bottom_color = Color(0.08213877, 0.50082654, 0.33493912, 1)
+ground_horizon_color = Color(0.9027282, 1.0260638, 1.0860856, 1)
+
+[sub_resource type="Sky" id="Sky_0xm2m"]
+sky_material = SubResource("ProceduralSkyMaterial_ig7tw")
+
+[sub_resource type="Environment" id="Environment_h2yge"]
+background_mode = 2
+sky = SubResource("Sky_0xm2m")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dg77c"]
+albedo_texture = ExtResource("1_7mycd")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ycdy4"]
+albedo_texture = ExtResource("2_272bh")
+metallic = 1.0
+metallic_texture = ExtResource("3_5vw27")
+roughness_texture = ExtResource("5_4c57u")
+normal_enabled = true
+normal_texture = ExtResource("4_kek77")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w48qg"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_vivmo"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2cqfq"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 5.148991, 38.2305, -6.9858255)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_h2yge")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.192127, 5.332793, 8.744278)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3500147, -0.09300804, -3.5308468)
+material_override = SubResource("StandardMaterial3D_dg77c")
+size = Vector3(25, 1, 25)
+material = SubResource("StandardMaterial3D_ycdy4")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.676982, 0)
+radius = 1.0
+height = 5.0
+sides = 64
+material = SubResource("StandardMaterial3D_w48qg")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.043335, 4.114144, 0)
+script = ExtResource("6_efxa6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+mesh = SubResource("CapsuleMesh_vivmo")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("CapsuleShape3D_2cqfq")
