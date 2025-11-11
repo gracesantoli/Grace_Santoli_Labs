@@ -1,6 +1,5 @@
-[gd_scene load_steps=15 format=3 uid="uid://mdap844d78xv"]
+[gd_scene load_steps=14 format=3 uid="uid://mdap844d78xv"]
 
-[ext_resource type="Texture2D" path="res://alien-panels-ue/alien-panels_albedo.png" id="1_7mycd"]
 [ext_resource type="Texture2D" uid="uid://bvrtyy4maf2h2" path="res://materials/alien-panels-ue/alien-panels_albedo.png" id="2_272bh"]
 [ext_resource type="Texture2D" uid="uid://b1wii0yqcpx1p" path="res://materials/alien-panels-ue/alien-panels_metallic.png" id="3_5vw27"]
 [ext_resource type="Texture2D" uid="uid://cxyqld5duvoyc" path="res://materials/alien-panels-ue/alien-panels_normal-dx.png" id="4_kek77"]
@@ -23,7 +22,6 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dg77c"]
-albedo_texture = ExtResource("1_7mycd")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ycdy4"]
 albedo_texture = ExtResource("2_272bh")
@@ -50,11 +48,12 @@ shadow_enabled = true
 environment = SubResource("Environment_h2yge")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.192127, 5.332793, 8.744278)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.192127, 5.77565, 8.744278)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3500147, -0.09300804, -3.5308468)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3016834, -0.09300804, -3.5290844)
 material_override = SubResource("StandardMaterial3D_dg77c")
+use_collision = true
 size = Vector3(25, 1, 25)
 material = SubResource("StandardMaterial3D_ycdy4")
 
